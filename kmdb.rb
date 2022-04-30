@@ -69,16 +69,16 @@
 
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
-Studio.destroy_all
-Movie.destroy_all
-Actor.destroy_all
-Role.destroy_all
+# Studio.destroy_all
+# Movie.destroy_all
+# Actor.destroy_all
+# Role.destroy_all
 
 # Generate models and tables, according to the domain model.
-rails generate model Studio
-rails generate model Movie
-rails generate model Actor
-rails generate model Role
+# rails generate model Studio
+# rails generate model Movie
+# rails generate model Actor
+# rails generate model Role
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
@@ -175,95 +175,95 @@ actor_anne_hathaway = Actor.find_by({ "name" => "Anne Hathaway" })
 
 # Batman Begins
 new_role = Role.new
-new_role[movie_id] = movie_batman1["id"]
-new_role[actor_id] = actor_christian_bale["id"]
-new_role[character_name] = "Bruce Wayne"
+new_role["movie_id"] = movie_batman1["id"]
+new_role["actor_id"] = actor_christian_bale["id"]
+new_role["character_name"] = "Bruce Wayne"
 new_role.save
 
 new_role = Role.new
-new_role[movie_id] = movie_batman1["id"]
-new_role[actor_id] = actor_michael_cane["id"]
-new_role[character_name] = "Alfred"
+new_role["movie_id"] = movie_batman1["id"]
+new_role["actor_id"] = actor_michael_cane["id"]
+new_role["character_name"] = "Alfred"
 new_role.save
 
 new_role = Role.new
-new_role[movie_id] = movie_batman1["id"]
-new_role[actor_id] = actor_liam_neeson["id"]
-new_role[character_name] = "Ra's Al Ghul"
+new_role["movie_id"] = movie_batman1["id"]
+new_role["actor_id"] = actor_liam_neeson["id"]
+new_role["character_name"] = "Ra's Al Ghul"
 new_role.save
 
 new_role = Role.new
-new_role[movie_id] = movie_batman1["id"]
-new_role[actor_id] = actor_katie_holmes["id"]
-new_role[character_name] = "Rachel Dawes"
+new_role["movie_id"] = movie_batman1["id"]
+new_role["actor_id"] = actor_katie_holmes["id"]
+new_role["character_name"] = "Rachel Dawes"
 new_role.save
 
 new_role = Role.new
-new_role[movie_id] = movie_batman1["id"]
-new_role[actor_id] = actor_gary_oldman["id"]
-new_role[character_name] = "Commissioner Gordon"
+new_role["movie_id"] = movie_batman1["id"]
+new_role["actor_id"] = actor_gary_oldman["id"]
+new_role["character_name"] = "Commissioner Gordon"
 new_role.save
 
 # The Dark Knight
 new_role = Role.new
-new_role[movie_id] = movie_batman2["id"]
-new_role[actor_id] = actor_christian_bale["id"]
-new_role[character_name] = "Bruce Wayne"
+new_role["movie_id"] = movie_batman2["id"]
+new_role["actor_id"] = actor_christian_bale["id"]
+new_role["character_name"] = "Bruce Wayne"
 new_role.save
 
 new_role = Role.new
-new_role[movie_id] = movie_batman2["id"]
-new_role[actor_id] = actor_michael_cane["id"]
-new_role[character_name] = "Alfred"
+new_role["movie_id"] = movie_batman2["id"]
+new_role["actor_id"] = actor_michael_cane["id"]
+new_role["character_name"] = "Alfred"
 new_role.save
 
 new_role = Role.new
-new_role[movie_id] = movie_batman2["id"]
-new_role[actor_id] = actor_aaron_eckhart["id"]
-new_role[character_name] = "Harvey Dent"
+new_role["movie_id"] = movie_batman2["id"]
+new_role["actor_id"] = actor_aaron_eckhart["id"]
+new_role["character_name"] = "Harvey Dent"
 new_role.save
 
 new_role = Role.new
-new_role[movie_id] = movie_batman2["id"]
-new_role[actor_id] = actor_heath_ledger["id"]
-new_role[character_name] = "Joker"
+new_role["movie_id"] = movie_batman2["id"]
+new_role["actor_id"] = actor_heath_ledger["id"]
+new_role["character_name"] = "Joker"
 new_role.save
 
 new_role = Role.new
-new_role[movie_id] = movie_batman2["id"]
-new_role[actor_id] = actor_maggie_gyllenhaal["id"]
-new_role[character_name] = "Rachel Dawes"
+new_role["movie_id"] = movie_batman2["id"]
+new_role["actor_id"] = actor_maggie_gyllenhaal["id"]
+new_role["character_name"] = "Rachel Dawes"
 new_role.save
 
 # The Dark Knight Rises
 new_role = Role.new
-new_role[movie_id] = movie_batman3["id"]
-new_role[actor_id] = actor_christian_bale["id"]
-new_role[character_name] = "Bruce Wayne"
+new_role["movie_id"] = movie_batman3["id"]
+new_role["actor_id"] = actor_christian_bale["id"]
+new_role["character_name"] = "Bruce Wayne"
 new_role.save
 
 new_role = Role.new
-new_role[movie_id] = movie_batman3["id"]
-new_role[actor_id] = actor_gary_oldman["id"]
-new_role[character_name] = "Commissioner Gordon"
+new_role["movie_id"] = movie_batman3["id"]
+new_role["actor_id"] = actor_gary_oldman["id"]
+new_role["character_name"] = "Commissioner Gordon"
 new_role.save
 
 new_role = Role.new
-new_role[movie_id] = movie_batman3["id"]
-new_role[actor_id] = actor_tom_hardy["id"]
-new_role[character_name] = "Bane"
+new_role["movie_id"] = movie_batman3["id"]
+new_role["actor_id"] = actor_tom_hardy["id"]
+new_role["character_name"] = "Bane"
 new_role.save
 
 new_role = Role.new
-new_role[movie_id] = movie_batman3["id"]
-new_role[actor_id] = actor_joseph_gl["id"]
-new_role[character_name] = "John Blake"
+new_role["movie_id"] = movie_batman3["id"]
+new_role["actor_id"] = actor_joseph_gl["id"]
+new_role["character_name"] = "John Blake"
 new_role.save
 
 new_role = Role.new
-new_role[movie_id] = movie_batman3["id"]
-new_role[actor_id] = actor_anne_hathaway["id"]
-new_role[character_name] = "Selina Kyle"
+new_role["movie_id"] = movie_batman3["id"]
+new_role["actor_id"] = actor_anne_hathaway["id"]
+new_role["character_name"] = "Selina Kyle"
 new_role.save
 
 
