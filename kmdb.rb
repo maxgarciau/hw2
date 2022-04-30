@@ -274,6 +274,7 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 movies_all = Movie.all
+studio = Studio.find_by({ "id" => movie["studio_id"] })
 
 for movie in movies_all
     title = movie["title"]
