@@ -69,10 +69,10 @@
 
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
-# Studio.destroy_all
-# Movie.destroy_all
-# Actor.destroy_all
-# Role.destroy_all
+Studio.destroy_all
+Movie.destroy_all
+Actor.destroy_all
+Role.destroy_all
 
 # Generate models and tables, according to the domain model.
 # rails generate model Studio
@@ -118,57 +118,57 @@ movie_batman3 = Movie.find_by({ "title" => "The Dark Knight Rises" })
 # Insert actors
 new_actor = Actor.new
 new_actor["name"] = "Christian Bale"
-new_movie.save
+new_actor.save
 actor_christian_bale = Actor.find_by({ "name" => "Christian Bale" })
 
 new_actor = Actor.new
 new_actor["name"] = "Michael Caine"
-new_movie.save
-actor_michael_cane = Actor.find_by({ "name" => "Michael Cane" })
+new_actor.save
+actor_michael_caine = Actor.find_by({ "name" => "Michael Caine" })
 
 new_actor = Actor.new
 new_actor["name"] = "Liam Neeson"
-new_movie.save
+new_actor.save
 actor_liam_neeson = Actor.find_by({ "name" => "Liam Neeson" })
 
 new_actor = Actor.new
 new_actor["name"] = "Katie Holmes"
-new_movie.save
+new_actor.save
 actor_katie_holmes = Actor.find_by({ "name" => "Katie Holmes" })
 
 new_actor = Actor.new
 new_actor["name"] = "Gary Oldman"
-new_movie.save
+new_actor.save
 actor_gary_oldman = Actor.find_by({ "name" => "Gary Oldman" })
 
 new_actor = Actor.new
 new_actor["name"] = "Heath Ledger"
-new_movie.save
+new_actor.save
 actor_heath_ledger = Actor.find_by({ "name" => "Heath Ledger" })
 
 new_actor = Actor.new
 new_actor["name"] = "Aaron Eckhart"
-new_movie.save
+new_actor.save
 actor_aaron_eckhart = Actor.find_by({ "name" => "Aaron Eckhart" })
 
 new_actor = Actor.new
 new_actor["name"] = "Maggie Gyllenhaal"
-new_movie.save
+new_actor.save
 actor_maggie_gyllenhaal = Actor.find_by({ "name" => "Maggie Gyllenhaal" })
 
 new_actor = Actor.new
 new_actor["name"] = "Tom Hardy"
-new_movie.save
+new_actor.save
 actor_tom_hardy = Actor.find_by({ "name" => "Tom Hardy" })
 
 new_actor = Actor.new
 new_actor["name"] = "Joseph Gordon-Levitt"
-new_movie.save
+new_actor.save
 actor_joseph_gl = Actor.find_by({ "name" => "Joseph Gordon-Levitt" })
 
 new_actor = Actor.new
 new_actor["name"] = "Anne Hathaway"
-new_movie.save
+new_actor.save
 actor_anne_hathaway = Actor.find_by({ "name" => "Anne Hathaway" })
 
 # Insert roles
@@ -182,7 +182,7 @@ new_role.save
 
 new_role = Role.new
 new_role["movie_id"] = movie_batman1["id"]
-new_role["actor_id"] = actor_michael_cane["id"]
+new_role["actor_id"] = actor_michael_caine["id"]
 new_role["character_name"] = "Alfred"
 new_role.save
 
@@ -213,7 +213,7 @@ new_role.save
 
 new_role = Role.new
 new_role["movie_id"] = movie_batman2["id"]
-new_role["actor_id"] = actor_michael_cane["id"]
+new_role["actor_id"] = actor_michael_caine["id"]
 new_role["character_name"] = "Alfred"
 new_role.save
 
@@ -271,17 +271,19 @@ new_role.save
 puts "Movies"
 puts "======"
 puts ""
+# Table headers
+puts "Title".ljust(26)+"Year".ljust(11)+"Rating".ljust(9)+"Studio".ljust(16)
+puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 movies_all = Movie.all
-studio = Studio.find_by({ "id" => movie["studio_id"] })
 
 for movie in movies_all
     title = movie["title"]
     year_released = movie["year_released"]
     rated = movie["rated"]
-    studio = studio["name"]
-    puts "#{title} #{year_released} #{rated} #{studio}"
+    studio = Studio.find_by({ "id" => movie["studio_id"] })
+    puts "#{title.ljust(25)} #{year_released.to_s.ljust(10)} #{rated.ljust(8)} #{studio["name"].ljust(15)}"
 end
 
 # Prints a header for the cast output
@@ -289,13 +291,18 @@ puts ""
 puts "Top Cast"
 puts "========"
 puts ""
+# Table headers
+puts "Title".ljust(26)+"Actor".ljust(26)+"Character".ljust(26)
+puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 cast_all = Role.all
 
 for role in cast_all
+    movie = Movie.find_by({ "id" => role["movie_id"] })
     title = movie["title"]
+    actor = Actor.find_by({ "id" => role["actor_id"] })
     actor_name = actor["name"]
     character_name = role["character_name"]
-    puts "#{title} #{actor_name} #{character_name}"
+    puts "#{title.ljust(25)} #{actor_name.ljust(25)} #{character_name.ljust(25)}"
 end
